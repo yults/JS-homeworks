@@ -1,0 +1,314 @@
+.header {
+  position: fixed;
+  margin-left: -7px;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  font-size: 32px;
+  color: black;
+  text-align: center;
+  border-bottom: 2px solid rgb(221, 216, 216);
+  background-color:white;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.header__firstLetter {
+  color: red;
+}
+
+.wrapper {
+  margin-top: 45px;
+  font-family: sans-serif;
+  margin-bottom: 100px;
+}
+
+
+/* SwITCH */
+
+.switcher_label {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 20px;
+  font-size: 40px;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+#switcher ,
+#switcher:checked~.mobile__wrapper,
+#switcher:not(:checked)~.desktop__wrapper {
+  display: none;
+}
+
+#switcher:checked ~.switcher_label {
+  transform: rotate(180deg);
+}
+
+.switcher_label:hover {
+  color: rgb(93, 89, 89);
+}
+
+
+/* MOBILE VERSION */
+
+.mobile__wrapper {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+}
+
+.mobile__card {
+  display: inline-block;
+  max-width: 380px;
+  margin: 10px 20px 10px auto;
+  border: 1px solid rgb(221, 216, 216);
+}
+
+.mobile__card:hover {
+  box-shadow: 3px 3px 5px 2px grey;
+}
+
+.mobile__card .mobile__card_name {
+  margin-left: 18px;
+  font-size: 30px;
+  color: rgb(50, 48, 48);
+}
+
+.mobile__card_img {
+  height: 320px;
+  width: 340px;
+}
+
+.mobile__card_description {
+  margin: 10px 20px;
+  color:rgb(95, 92, 92);
+}
+
+
+/* DESKTOP VERSION KARUSEL*/
+
+.desktop__wrapper {
+  height: 500px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.desktop__card {
+  left:10%;
+  height: inherit;
+  position: absolute;
+  transform: scale(0.8);
+}
+
+.desktop__radio {
+  display: none;
+}
+
+.desktop__card_img {
+  box-shadow: 3px 3px 5px 2px grey;
+  display: block;
+  height: 300px;
+  width: 30vw;
+}
+
+.desktop__modalka {
+  display: none;
+}
+
+.desktop__name {
+  text-decoration: none;
+  visibility: hidden;
+  position: absolute;
+  text-align: center;
+  width: 30vw;
+  padding-top: 135px;
+  padding-bottom: 135px;
+  margin-top: -300px;
+  margin-left: 100%;
+  color: white;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#card1_img, #name1 {
+  margin-left: 100%;
+}
+#card2_img, #name2 {
+  margin-left: 200%;
+}
+#card3_img, #name3 {
+  margin-left: 300%;
+}
+#card4_img, #name4 {
+  margin-left: 400%;
+}
+#card5_img, #name5 {
+  margin-left: 500%;
+}
+#card6_img, #name6 {
+  margin-left: 600%;
+}
+
+#card1:checked ~.desktop__slider {
+  transform: translate(0%);
+}
+#card2:checked~.desktop__slider {
+  transform: translate(-24%);
+}
+#card3:checked~.desktop__slider {
+  transform: translate(-49%);
+}
+#card4:checked~.desktop__slider {
+  transform: translate(-74%);
+}
+#card5:checked~.desktop__slider {
+  transform: translate(-98%);
+}
+#card6:checked~.desktop__slider {
+  transform: translate(-122%);
+}
+
+#card1:checked~.desktop__slider #card1_img:hover + .desktop__name,
+#card1:checked~.desktop__slider #card1_img~.desktop__name:hover,
+#card2:checked~.desktop__slider #card2_img:hover + .desktop__name,
+#card2:checked~.desktop__slider #card2_img~.desktop__name:hover,
+#card3:checked~.desktop__slider #card3_img:hover + .desktop__name,
+#card3:checked~.desktop__slider #card3_img~.desktop__name:hover,
+#card4:checked~.desktop__slider #card4_img:hover + .desktop__name,
+#card4:checked~.desktop__slider #card4_img~.desktop__name:hover,
+#card5:checked~.desktop__slider #card5_img:hover + .desktop__name,
+#card5:checked~.desktop__slider #card5_img~.desktop__name:hover,
+#card6:checked~.desktop__slider #card6_img:hover + .desktop__name,
+#card6:checked~.desktop__slider #card6_img~.desktop__name:hover {
+  visibility: visible;
+}
+
+#card1:not(:checked)~.desktop__slider #card1_img,
+#card2:not(:checked)~.desktop__slider #card2_img,
+#card3:not(:checked)~.desktop__slider #card3_img,
+#card4:not(:checked)~.desktop__slider #card4_img,
+#card5:not(:checked)~.desktop__slider #card5_img,
+#card6:not(:checked)~.desktop__slider #card6_img {
+  transform: scale(0.8);
+  opacity: 0.7;
+}
+
+/*dottes*/
+
+.desktop__dottes {
+  position: absolute;
+  left: 50%;
+  margin-top: 300px;
+  margin-left: -80px;
+}
+
+.desktop__dottes label {
+  cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  margin: 10px 10px 0 2px;
+  position: relative;
+  width: 15px;
+  border-radius: 50%;
+  transition: background ease-in-out .5s;
+}
+
+.desktop__dottes label::after {
+  border: 3px solid rgb(202, 201, 201);;
+  content: " ";
+  height: 13px;
+  left: -2px;
+  top: -2px;
+  position: absolute;
+  width: 13px;
+  border-radius: 50%;
+}
+
+.desktop__dottes label::before,
+#card1:checked~.desktop__dottes label:nth-of-type(1),
+#card2:checked~.desktop__dottes label:nth-of-type(2),
+#card3:checked~.desktop__dottes label:nth-of-type(3),
+#card4:checked~.desktop__dottes label:nth-of-type(4),
+#card5:checked~.desktop__dottes label:nth-of-type(5),
+#card6:checked~.desktop__dottes label:nth-of-type(6) {
+  background: rgb(202, 201, 201);
+}
+
+
+/* MODAL WINDOW */
+
+.desktop__modalka:target {
+  display: block;
+  position: fixed;
+  z-index: 500;
+  margin-top: 35px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  animation: scale 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.desktop__card_img-modal {
+  position: absolute;
+  width: 40vw;
+  height: 58vh;
+  margin-left: 15%;
+  margin-top: 6%;
+}
+
+.desktop__card_description-name {
+  font-size: 35px;
+}
+
+.desktop__card_description {
+  position: absolute;
+  top: 25%;
+  margin-left: 60%;
+  font-size: 18px;
+  color: white;
+}
+
+.modalka__cross {
+  position: absolute;
+  margin-top: 6%;
+  margin-left: 90%;
+  text-decoration: none;
+  color: white;
+  transform: scale(2);
+}
+
+/* FOOTER */
+
+.footer {
+  margin-left: -7px;
+  padding-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1060;
+  color: black;
+  border-top: 2px solid rgb(221, 216, 216);
+  background-color: white;
+}
+
+.footer__contact {
+  display: block;
+}
+
+.footer__lastContact{
+  display: inline-block;
+  margin: 0 0 14px 0;
+}
+
+.footer__copyright {
+  float: right;
+  margin: 0 14px 14px auto;
+}
+
+.footer__href {
+  color: #4c4cd8;
+}
